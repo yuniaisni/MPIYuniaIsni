@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Pembelajaran Jaringan Komputer - Fase E</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      /* Memastikan rasio aspek 16:9 yang konsisten di layar besar */
+      .aspect-16-9 {
+        aspect-ratio: 16 / 9;
+      }
+      /* Custom scrollbar untuk kenyamanan membaca materi */
+      .custom-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scroll::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-slate-900 text-slate-100 font-sans min-h-screen flex items-center justify-center p-4"
+  >
+    <div
+      id="landing-page"
+      class="w-full max-w-5xl aspect-16-9 bg-gradient-to-br from-indigo-900 via-slate-900 to-emerald-900 rounded-2xl shadow-2xl flex flex-col justify-between p-12 border border-slate-700/50 relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"
+      ></div>
+
+      <div class="z-10">
+        <span
+          class="px-4 py-1.5 bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-full border border-emerald-500/30"
+        >
+          Informatika Kelas X | Fase E
+        </span>
+        <h1
+          class="text-4xl md:text-5xl font-extrabold mt-4 tracking-tight leading-tight"
+        >
+          Media Pembelajaran Interaktif<br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400"
+            >Jaringan Komputer</span
+          >
+        </h1>
+      </div>
+
+      <div class="z-10 flex flex-col items-start gap-4">
+        <button
+          onclick="mulaiBelajar()"
+          class="group flex items-center gap-3 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-lg rounded-xl shadow-lg shadow-emerald-500/20 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+        >
+          Mulai Belajar
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2.5"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        class="z-10 border-t border-slate-700/50 pt-6 flex justify-between items-center text-sm text-slate-400"
+      >
+        <div>
+          <p class="font-medium text-slate-300">Penyusun:</p>
+          <p class="text-emerald-400 font-semibold text-base">
+            Yunia Isni Siddiq, S.Pd.
+          </p>
+        </div>
+        <div class="text-right">
+          <p class="font-semibold text-slate-300">SMA Albanna Denpasar</p>
+          <p class="text-xs">Tahun Ajaran 2025/2026</p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="main-page"
+      class="w-full max-w-7xl aspect-16-9 bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 overflow-hidden hidden grid grid-cols-2"
+    >
+      <div
+        class="flex flex-col h-full bg-slate-800/50 border-r border-slate-700/70"
+      >
+        <div class="flex border-b border-slate-700 bg-slate-900/40 p-2 gap-2">
+          <button
+            onclick="switchTab('tujuan')"
+            id="btn-tujuan"
+            class="flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all bg-emerald-500 text-slate-950 shadow-md cursor-pointer"
+          >
+            Tujuan
+          </button>
+          <button
+            onclick="switchTab('materi')"
+            id="btn-materi"
+            class="flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all text-slate-400 hover:bg-slate-700/50 cursor-pointer"
+          >
+            Materi
+          </button>
+          <button
+            onclick="switchTab('evaluasi')"
+            id="btn-evaluasi"
+            class="flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all text-slate-400 hover:bg-slate-700/50 cursor-pointer"
+          >
+            Evaluasi
+          </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-6 custom-scroll">
+          <div id="tab-tujuan" class="space-y-4">
+            <h2
+              class="text-2xl font-bold text-emerald-400 border-b border-slate-700 pb-2"
+            >
+              Tujuan Pembelajaran (Fase E)
+            </h2>
+            <p class="text-slate-300 leading-relaxed">
+              Setelah mempelajari topik jaringan komputer ini melalui pengamatan
+              model 3D dan uraian materi, peserta didik diharapkan mampu:
+            </p>
+            <ul class="space-y-3 list-none pl-0">
+              <li class="flex items-start gap-3 text-slate-300">
+                <span class="text-emerald-400 mt-1">✔</span> Memahami konsep
+                dasar jaringan komputer, perbedaan jaringan lokal (LAN) dan
+                jaringan internet (WAN).
+              </li>
+              <li class="flex items-start gap-3 text-slate-300">
+                <span class="text-emerald-400 mt-1">✔</span> Mengidentifikasi
+                berbagai jenis topologi jaringan serta perangkat keras jaringan
+                pendukungnya secara tepat.
+              </li>
+              <li class="flex items-start gap-3 text-slate-300">
+                <span class="text-emerald-400 mt-1">✔</span> Menganalisis
+                mekanisme pengiriman data dalam jaringan (packet switching)
+                secara kritis.
+              </li>
+            </ul>
+            <div
+              class="bg-indigo-950/40 border border-indigo-500/20 p-4 rounded-xl mt-6"
+            >
+              <p class="text-sm text-indigo-300 font-medium">
+                💡 <strong>Petunjuk Belajar:</strong> Gunakan simulasi 3D di
+                sebelah kanan halaman untuk memvisualisasikan bentuk fisik
+                perangkat keras jaringan sembari membaca uraian materi.
+              </p>
+            </div>
+          </div>
+
+          <div id="tab-materi" class="space-y-5 hidden">
+            <h2
+              class="text-2xl font-bold text-emerald-400 border-b border-slate-700 pb-2"
+            >
+              Uraian Materi: Pengantar Jaringan Komputer
+            </h2>
+
+            <div class="space-y-3">
+              <h3 class="text-lg font-semibold text-cyan-400">
+                1. Apa itu Jaringan Komputer?
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Jaringan komputer adalah sebuah sistem yang terdiri atas dua
+                atau lebih perangkat komputer serta perangkat jaringan lainnya
+                yang saling terhubung menggunakan media transmisi (kabel atau
+                nirkabel) untuk saling berbagi data, informasi, dan sumber daya
+                (seperti printer atau koneksi internet).
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-lg font-semibold text-cyan-400">
+                2. Klasifikasi Jaringan Berdasarkan Geografis
+              </h3>
+              <ul class="space-y-2 text-sm text-slate-300 list-disc pl-5">
+                <li>
+                  <strong>LAN (Local Area Network):</strong> Jaringan berskala
+                  kecil seperti di dalam satu ruangan, rumah, atau sekolah (SMA
+                  Albanna).
+                </li>
+                <li>
+                  <strong>MAN (Metropolitan Area Network):</strong> Jaringan
+                  yang menghubungkan antar wilayah atau kota dalam radius 10-50
+                  km.
+                </li>
+                <li>
+                  <strong>WAN (Wide Area Network):</strong> Jaringan dengan
+                  jangkauan geografis sangat luas, mencakup benua, contohnya
+                  adalah Internet.
+                </li>
+              </ul>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-lg font-semibold text-cyan-400">
+                3. Perangkat Keras Jaringan (Hardware)
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Untuk membangun jaringan, diperlukan komponen fisik pendukung
+                seperti yang dapat kalian amati pada model interaktif di sebelah
+                kanan, di antaranya:
+              </p>
+              <ul class="space-y-2 text-sm text-slate-300 list-disc pl-5">
+                <li>
+                  <strong>Router:</strong> Penghubung antara dua atau lebih
+                  jaringan yang berbeda segmen/protokol.
+                </li>
+                <li>
+                  <strong>Switch:</strong> Pembagi sinyal dan pengatur lalu
+                  lintas data pada jaringan lokal (LAN) berdasarkan MAC Address.
+                </li>
+                <li>
+                  <strong>Access Point:</strong> Perangkat untuk memancarkan
+                  sinyal internet nirkabel (Wi-Fi).
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="tab-evaluasi" class="space-y-6 hidden">
+            <div
+              class="flex justify-between items-center border-b border-slate-700 pb-2"
+            >
+              <h2 class="text-2xl font-bold text-emerald-400">
+                Uji Kompetensi
+              </h2>
+              <span
+                id="quiz-progress"
+                class="text-sm bg-slate-700 px-3 py-1 rounded-full font-mono text-slate-300"
+                >Soal 1 dari 10</span
+              >
+            </div>
+
+            <div id="quiz-container">
+              <p
+                id="question-text"
+                class="text-base font-medium text-slate-200 mb-4 leading-relaxed"
+              ></p>
+              <div id="options-container" class="space-y-2.5"></div>
+              <div class="mt-6 flex justify-end">
+                <button
+                  id="btn-next"
+                  onclick="nextQuestion()"
+                  class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm rounded-lg transition-colors shadow-md hidden cursor-pointer"
+                >
+                  Soal Berikutnya →
+                </button>
+              </div>
+            </div>
+
+            <div
+              id="result-container"
+              class="hidden text-center py-8 space-y-4"
+            >
+              <div
+                class="inline-flex p-4 bg-emerald-500/10 rounded-full text-emerald-400 mb-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-12 w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-100">
+                Evaluasi Selesai!
+              </h3>
+              <p class="text-slate-400">
+                Hasil nilai pengerjaan kuis kognitif Jaringan Komputer Anda:
+              </p>
+              <p
+                id="final-score"
+                class="text-5xl font-black text-emerald-400 font-mono"
+              >
+                0 / 100
+              </p>
+              <button
+                onclick="resetQuiz()"
+                class="mt-4 px-5 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 font-semibold text-sm rounded-lg transition-colors cursor-pointer"
+              >
+                Ulangi Kuis
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-full bg-slate-950 relative">
+        <div
+          class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md border border-slate-700/60 px-3 py-1.5 rounded-md z-10 text-xs font-semibold text-slate-300 tracking-wide pointer-events-none"
+        >
+          🌐 Ruang Simulasi Interaktif 3D / AR
+        </div>
+        <iframe
+          src="https://viewer.assemblrworld.com/Embed/-ZGLAKgl2z6vl3Qim2ix"
+          allow="
+            camera;
+            microphone;
+            gyroscope;
+            accelerometer;
+            magnetometer;
+            xr-spatial-tracking;
+            fullscreen;
+          "
+          allowfullscreen
+          class="w-full h-full border-0"
+        >
+        </iframe>
+      </div>
+    </div>
+
+    <script>
+      // Data Bank 10 Soal Berpikir Tingkat Tinggi (HOTS/MOTS) Pilihan Ganda (5 Opsi)
+      const questions = [
+        {
+          q: "Di SMA Albanna, laboran ingin menghubungkan ruang kelas X, XI, dan XII yang berada di lantai berbeda agar saling bertukar data lokal berkecepatan tinggi tanpa menggunakan kuota internet global. Jenis arsitektur jaringan yang paling tepat digunakan adalah...",
+          options: [
+            "WAN (Wide Area Network)",
+            "MAN (Metropolitan Area Network)",
+            "LAN (Local Area Network)",
+            "PAN (Personal Area Network)",
+            "SAN (Storage Area Network)",
+          ],
+          answer: 2,
+        },
+        {
+          q: "Sebuah kantor mengalami masalah karena tabrakan data (collision) yang tinggi akibat menggunakan hub lama. Perangkat jaringan apa yang sebaiknya dibeli untuk menggantikan hub agar distribusi data ditujukan spesifik ke MAC Address komputer tujuan?",
+          options: [
+            "Repeater",
+            "Switch",
+            "Access Point",
+            "Modem",
+            "Kabel Coaxial",
+          ],
+          answer: 1,
+        },
+        {
+          q: "Ketika mengirimkan pesan WhatsApp, data dipecah menjadi bagian-bagian kecil yang berisi alamat asal dan tujuan. Bagian terkecil aliran data digital ini dalam mekanisme packet switching disebut...",
+          options: [
+            "Bandwidth",
+            "Segment",
+            "Paket (Packet)",
+            "Signal",
+            "Protocol",
+          ],
+          answer: 2,
+        },
+        {
+          q: "Perangkat keras jaringan komputer yang bertugas secara spesifik menentukan jalur terbaik (routing) dan menghubungkan dua buah segmen network yang berbeda IP Address-nya adalah...",
+          options: [
+            "Switch",
+            "Hub",
+            "Router",
+            "Network Interface Card",
+            "Bridge",
+          ],
+          answer: 2,
+        },
+        {
+          q: "Mengapa koneksi jaringan nirkabel (Wi-Fi) terkadang mengalami penurunan kecepatan ketika posisi perangkat laptop kita terhalang tembok beton tebal yang sangat masif?",
+          options: [
+            "Sinyal radio mengalami absorpsi (penyerapan) dan refleksi oleh material padat",
+            "Kabel fiber optik putus di dalam dinding",
+            "IP Address laptop berubah secara otomatis",
+            "Router kehabisan daya listrik",
+            "Switch memblokir paket data laptop",
+          ],
+          answer: 0,
+        },
+        {
+          q: "Alamat logis yang unik berukuran 32-bit (pada IPv4) yang disematkan pada setiap host komputer agar dapat dikenali dan berkomunikasi dalam jaringan internet disebut...",
+          options: ["MAC Address", "SSID", "IP Address", "URL", "Gateway"],
+          answer: 2,
+        },
+        {
+          q: "Saat menggunakan arsitektur Client-Server, perangkat yang bertugas khusus menyediakan basis data, file, atau layanan printer untuk diakses bersama dinamakan...",
+          options: ["Client", "Server", "Peer", "Workstation", "User"],
+          answer: 1,
+        },
+        {
+          q: "Manakah di bawah ini yang merupakan keuntungan paling utama dari implementasi topologi Star dibandingkan dengan topologi Bus jika terjadi kerusakan kabel?",
+          options: [
+            "Memerlukan jumlah kabel yang jauh lebih sedikit",
+            "Jika salah satu kabel klien putus, jaringan komputer lain tidak akan terganggu",
+            "Tidak memerlukan switch atau hub sentral",
+            "Kecepatan transfer data otomatis berlipat ganda",
+            "Mudah dipasang tanpa memerlukan konfigurasi IP",
+          ],
+          answer: 1,
+        },
+        {
+          q: "Sebuah smartphone ingin terhubung ke jaringan internet kabel lokal sekolah secara nirkabel. Perangkat keras yang bertugas memancarkan gelombang radio Wi-Fi tersebut adalah...",
+          options: [
+            "Server",
+            "Access Point",
+            "Fiber Optic Cable",
+            "LAN Tester",
+            "Crimping Tools",
+          ],
+          answer: 1,
+        },
+        {
+          q: "Aturan baku atau bahasa standar yang disepakati secara internasional agar dua atau lebih entitas komputer yang berbeda merk dapat saling berkomunikasi di internet disebut...",
+          options: [
+            "Topology",
+            "Packet Switching",
+            "Protocol (seperti TCP/IP)",
+            "Bandwidth",
+            "Ethernet",
+          ],
+          answer: 2,
+        },
+      ];
+
+      let currentQuestionIndex = 0;
+      let score = 0;
+
+      // Navigasi Pindah Halaman Awal ke Aplikasi Utama
+      function mulaiBelajar() {
+        document.getElementById("landing-page").classList.add("hidden");
+        document.getElementById("main-page").classList.remove("hidden");
+      }
+
+      // Navigasi Tab Menu di Separuh Kiri
+      function switchTab(tabName) {
+        const tabs = ["tujuan", "materi", "evaluasi"];
+        tabs.forEach((t) => {
+          document.getElementById(`tab-${t}`).classList.add("hidden");
+          document.getElementById(`btn-${t}`).className =
+            "flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all text-slate-400 hover:bg-slate-700/50 cursor-pointer";
+        });
+
+        document.getElementById(`tab-${tabName}`).classList.remove("hidden");
+        document.getElementById(`btn-${tabName}`).className =
+          "flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all bg-emerald-500 text-slate-950 shadow-md cursor-pointer";
+
+        if (tabName === "evaluasi") {
+          loadQuestion();
+        }
+      }
+
+      // Logika Load Soal Kuis
+      function loadQuestion() {
+        if (currentQuestionIndex >= questions.length) {
+          showResult();
+          return;
+        }
+
+        document.getElementById("quiz-container").classList.remove("hidden");
+        document.getElementById("result-container").classList.add("hidden");
+        document.getElementById("btn-next").classList.add("hidden");
+        document.getElementById("quiz-progress").innerText =
+          `Soal ${currentQuestionIndex + 1} dari ${questions.length}`;
+
+        const currentQuestion = questions[currentQuestionIndex];
+        document.getElementById("question-text").innerText = currentQuestion.q;
+
+        const optionsContainer = document.getElementById("options-container");
+        optionsContainer.innerHTML = "";
+
+        const alphabet = ["A", "B", "C", "D", "E"];
+        currentQuestion.options.forEach((opt, idx) => {
+          const btn = document.createElement("button");
+          btn.className =
+            "w-full text-left p-3.5 rounded-xl border border-slate-700 bg-slate-900/30 hover:bg-slate-700/40 text-sm font-medium transition-all flex gap-3 items-center cursor-pointer option-btn";
+          btn.innerHTML = `<span class="bg-slate-700 text-slate-300 w-6 h-6 rounded-md flex items-center justify-center font-bold text-xs shrink-0">${alphabet[idx]}</span> <span class="text-slate-200">${opt}</span>`;
+          btn.onclick = () => selectAnswer(idx, btn);
+          optionsContainer.appendChild(btn);
+        });
+      }
+
+      // Logika Memilih Jawaban
+      function selectAnswer(selectedIndex, selectedBtn) {
+        const currentQuestion = questions[currentQuestionIndex];
+        const allButtons = document.querySelectorAll(".option-btn");
+
+        // Kunci interaksi agar tidak bisa klik opsi lain setelah memilih
+        allButtons.forEach((btn) => (btn.disabled = true));
+
+        if (selectedIndex === currentQuestion.answer) {
+          selectedBtn.classList.remove("border-slate-700", "bg-slate-900/30");
+          selectedBtn.classList.add(
+            "border-emerald-500/50",
+            "bg-emerald-500/10",
+            "text-emerald-400",
+          );
+          selectedBtn
+            .querySelector("span")
+            .classList.add("bg-emerald-500", "text-slate-950");
+          score++;
+        } else {
+          selectedBtn.classList.remove("border-slate-700", "bg-slate-900/30");
+          selectedBtn.classList.add(
+            "border-rose-500/50",
+            "bg-rose-500/10",
+            "text-rose-400",
+          );
+          selectedBtn
+            .querySelector("span")
+            .classList.add("bg-rose-500", "text-slate-100");
+
+          // Beri penanda warna hijau pada jawaban yang benar sebagai umpan balik instan
+          allButtons[currentQuestion.answer].classList.remove(
+            "border-slate-700",
+          );
+          allButtons[currentQuestion.answer].classList.add(
+            "border-emerald-500/40",
+            "bg-emerald-500/5",
+          );
+        }
+
+        document.getElementById("btn-next").classList.remove("hidden");
+      }
+
+      // Tombol Lanjut Soal
+      function nextQuestion() {
+        currentQuestionIndex++;
+        loadQuestion();
+      }
+
+      // Menampilkan Hasil Skor Kuis Akhir
+      function showResult() {
+        document.getElementById("quiz-container").classList.add("hidden");
+        document.getElementById("result-container").classList.remove("hidden");
+
+        // Konversi nilai skala 100
+        const finalScore = (score / questions.length) * 100;
+        document.getElementById("final-score").innerText = finalScore;
+      }
+
+      // Reset/Ulang Kuis dari awal
+      function resetQuiz() {
+        currentQuestionIndex = 0;
+        score = 0;
+        loadQuestion();
+      }
+    </script>
+  </body>
+</html>
